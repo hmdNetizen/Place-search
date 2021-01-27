@@ -5,19 +5,23 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import Users from "./user/pages/Users";
 
 function App() {
   return (
     <Router>
+      <MainNavigation />
       <Switch>
-        <Route exact path="/">
-          <Users />
-        </Route>
-        <Route exact path="/user/new">
-          <div>User Works!</div>
-        </Route>
-        <Redirect path="/" />
+        <main>
+          <Route exact path="/">
+            <Users />
+          </Route>
+          <Route exact path="/places/new">
+            Places Works!
+          </Route>
+          <Redirect to="/" />
+        </main>
       </Switch>
     </Router>
   );
